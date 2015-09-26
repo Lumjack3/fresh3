@@ -73,9 +73,12 @@ model = sm.OLS(y,x)
 f=model.fit()
 #print f.summary()
 print "The R-Squared between GDP and School Life Expectancy is: %s" % f.rsquared
-
-
-plt.figure()
-plt.scatter(df['gdp3'], df[2])
-plt.show()
+print "This is a high r-squared indicating a strong connection"
+print "The correlation is %s" % np.corrcoef(df['gdp3'], df[2])[0,1]
+print "This correlation isn't extremely high but maybe considered very high for economic values."
+print "Perhaps with richer economies there is more need for education"
+print "On the other hand, high resource countries can buck these trends."
+#plt.figure()
+#plt.scatter(df['gdp3'], df[2])
+#plt.show()
 
