@@ -4,7 +4,6 @@ from numpy import vstack,array
 from numpy.random import rand
 from scipy.cluster.vq import kmeans,vq
 import matplotlib.pyplot as plt
-import scipy.cluster.vq as scv
 
 #load un data
 df = pd.read_csv('C:\Thinkful\cluster\un.csv')
@@ -18,7 +17,7 @@ df3 = df2.as_matrix()
 
 #gnerate within cluster sum of squares
 klist = range(1,11)
-KM = [ scv.kmeans(df2.values, k) for k in klist ]    
+KM = [ kmeans(df2.values, k) for k in klist ]    
 avwcss = [ var for (cent, var) in KM ]
 
 plt.figure()
